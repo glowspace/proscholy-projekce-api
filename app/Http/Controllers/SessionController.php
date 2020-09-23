@@ -25,7 +25,7 @@ class SessionController extends Controller
         $session->code = $this->findNewCode();
         $session->save();
 
-        return response($session);
+        return response($session, Response::HTTP_CREATED);
     }
 
 
