@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Session;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+//Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
+//    return (int) $user->id === (int) $id;
+//});
+
+Broadcast::channel('Session.{id}', function ($user, $id) {
+    return Session::findOrFail($id);
 });
