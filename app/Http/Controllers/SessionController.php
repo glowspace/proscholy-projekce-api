@@ -25,6 +25,8 @@ class SessionController extends Controller
         $session->code = $this->findNewCode();
         $session->save();
 
+        $session->load(['songs', 'devices']);
+
         return response($session, Response::HTTP_CREATED);
     }
 
