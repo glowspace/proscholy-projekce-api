@@ -38,6 +38,6 @@ class SessionStatusUpdated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('Session.' . $this->session->id);
+        return new Channel('Session.' . $this->session->id);
     }
 }

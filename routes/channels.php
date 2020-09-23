@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-//Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
-//    return (int) $user->id === (int) $id;
-//});
-
-Broadcast::channel('Session.{id}', function ($user, $id) {
-    return Session::findOrFail($id);
+/**
+ * Projection session WebSocket broadcast channel.
+ *
+ * Push changes on every session update.
+ */
+Broadcast::channel('Session.{id}', function ($user, $id)
+{
+    return Session::findOrFail($id)->with('songs', 'devices');
 });

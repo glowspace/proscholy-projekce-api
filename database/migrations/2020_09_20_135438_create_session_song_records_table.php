@@ -13,11 +13,16 @@ class CreateSessionSongRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('session_song_records', function (Blueprint $table)
+        Schema::create('songs', function (Blueprint $table)
         {
             $table->id();
+
+            $table->unsignedInteger('session_id');
+            $table->unsignedInteger('regenschori_id');
+
             $table->string('name');
             $table->text('lyrics');
+
             $table->timestamps();
         });
     }
@@ -30,6 +35,6 @@ class CreateSessionSongRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('session_song_records');
+        Schema::dropIfExists('songs');
     }
 }
