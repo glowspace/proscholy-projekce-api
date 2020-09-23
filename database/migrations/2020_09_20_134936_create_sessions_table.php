@@ -17,10 +17,10 @@ class CreateSessionsTable extends Migration
         {
             $table->id();
             $table->string('name');
-            $table->string('place');
-            $table->dateTime('from');
-            $table->unsignedInteger('current_song_id');
-            $table->unsignedInteger('song_part_id');
+            $table->string('place')->nullable();
+            $table->dateTime('from')->nullable();
+            $table->unsignedInteger('current_song_id')->nullable();
+            $table->unsignedInteger('song_part_id')->nullable();
             $table->timestamps();
         });
     }

@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 // Sessions API
 Route::resource('api/sessions', 'SessionController');
+Route::resource('api/sessions/songs', 'SessionSongController');

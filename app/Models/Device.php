@@ -9,5 +9,8 @@ class Device extends Model
 {
     use HasFactory;
 
-
+    public function session()
+    {
+        return $this->belongsTo(Session::class);
+    }
 }

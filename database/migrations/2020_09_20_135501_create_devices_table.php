@@ -13,13 +13,17 @@ class CreateDevicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('devices', function (Blueprint $table)
+        {
             $table->id();
             $table->string('name');
             $table->unsignedInteger('type');
+            $table->unsignedInteger('session_id');
+            $table->dateTime('last_seen_at');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
