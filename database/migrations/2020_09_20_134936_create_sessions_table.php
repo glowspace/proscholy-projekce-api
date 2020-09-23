@@ -17,6 +17,7 @@ class CreateSessionsTable extends Migration
         {
             $table->id();
             $table->string('name');
+            $table->string('code');
             $table->string('place')->nullable();
             $table->dateTime('from')->nullable();
             $table->unsignedInteger('current_song_id')->nullable();

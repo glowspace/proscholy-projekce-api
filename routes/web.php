@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SessionSongController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Sessions API
-Route::resource('api/sessions', 'SessionController');
-Route::resource('api/sessions/songs', 'SessionSongController');
+
