@@ -41,6 +41,6 @@ class test extends Command
      */
     public function handle()
     {
-        event(new SessionStatusUpdated(Session::first()));
+        event(new SessionStatusUpdated(Session::find(21)));
     }
 }

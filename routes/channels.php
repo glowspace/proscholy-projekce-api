@@ -21,5 +21,8 @@ use Illuminate\Support\Facades\Broadcast;
  */
 Broadcast::channel('Session.{id}', function ($user, $id)
 {
-    return Session::findOrFail($id)->with('songs', 'devices');
+    $session = Session::findOrFail($id);
+    $session = $session->load(['songs', 'devices']);
+
+    return $session;
 });

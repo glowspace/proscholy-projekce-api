@@ -42,6 +42,8 @@ class SessionController extends Controller
     {
         $session = Session::where('code', $code)->firstOrFail();
 
+        $session->load(['songs', 'devices']);
+
         return response($session);
     }
 
@@ -63,6 +65,8 @@ class SessionController extends Controller
         $session->song_part_id    = $request->song_part_id;
 
         $session->save();
+
+        $session->load(['songs', 'devices']);
 
         // Pull update to clients (using WebSocket)
         event(new SessionStatusUpdated($session));
