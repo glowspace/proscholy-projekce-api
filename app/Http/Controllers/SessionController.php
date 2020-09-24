@@ -63,7 +63,6 @@ class SessionController extends Controller
 
         $session->current_song_id = $request->current_song_id;
         $session->song_part_id    = $request->song_part_id;
-
         $session->save();
 
         $session->load(['songs', 'devices']);

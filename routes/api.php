@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 // Sessions API
 Route::apiResource('sessions', SessionController::class);
-Route::apiResource('sessions/songs', SessionSongController::class);
+
+// Songs API
+Route::post('/songs', [SessionSongController::class, 'store']);
