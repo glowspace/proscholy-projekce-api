@@ -10,6 +10,8 @@
         "beyondcode/laravel-websockets": "^1.8",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
+        "gmostafa/php-graphql-client": "^1.7",
+        "gmostafa/php-graphql-oqm": "^1.2",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
