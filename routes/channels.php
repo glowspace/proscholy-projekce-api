@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Session;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -21,8 +20,6 @@ use Illuminate\Support\Facades\Broadcast;
  */
 Broadcast::channel('Session.{id}', function ($user, $id)
 {
-    $session = Session::findOrFail($id);
-    $session = $session->load(['songs', 'devices']);
-
-    return $session;
+    // TODO: authorisation
+    return true;
 });

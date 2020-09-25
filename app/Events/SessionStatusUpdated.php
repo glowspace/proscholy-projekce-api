@@ -5,7 +5,6 @@ namespace App\Events;
 use App\Models\Session;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -28,6 +27,7 @@ class SessionStatusUpdated implements ShouldBroadcast
     public function __construct(Session $session)
     {
         $this->session = $session;
+        $this->session->load(['devices', 'songs']);
     }
 
 
